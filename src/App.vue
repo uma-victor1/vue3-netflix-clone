@@ -1,11 +1,14 @@
 <template>
-  <div class="relative">
+  <div class="">
     <Header />
-    <img
-      class="absolute inset-0 h-screen w-screen bg-center bg-no-repeat bg-cover"
-      src="https://wallpapercave.com/wp/wp6193606.jpg"
-      alt="demon slayer"
-    />
+    <div class="fixed -top-50 -left-50 w-200 h-200 -z-10">
+      <img
+        draggable="false"
+        class="absolute inset-0 m-auto min-w-50 min-h-50"
+        src="https://wallpapercave.com/wp/wp6193606.jpg"
+        alt="demon slayer"
+      />
+    </div>
   </div>
   <router-view />
 </template>
