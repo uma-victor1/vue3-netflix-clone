@@ -26,7 +26,7 @@ export default {
       },
       TvShows: {
         name: "Shows",
-        href: "#"
+        href: "/about"
       },
       Series: {
         name: "Series",
