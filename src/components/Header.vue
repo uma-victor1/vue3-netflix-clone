@@ -1,13 +1,13 @@
 <template>
   <div>
-    <nav class="hidden lg:block">
-      <ul class="flex space-x-12 items-center">
-        <!-- Change text colors once color theme is added -->
+    <nav class="hidden lg:block bg-gray-900">
+      <ul class="flex space-x-8 items-center p-4">
+        <li class="font-bold text-3xl text-red-600">VueFlix</li>
         <li v-for="link in navLinks" :key="link.name">
-          <a
-            :href="link.href"
+          <router-link
+            :to="link.href"
             class="font-bold text-white hover:text-app-green-1 transition ease-in-out duration-300"
-            >{{ link.name }}</a
+            >{{ link.name }}</router-link
           >
         </li>
       </ul>
@@ -20,21 +20,17 @@ import { ref } from "vue";
 export default {
   setup() {
     const navLinks = ref({
-      services: {
-        name: "Services",
-        href: "#services"
+      Home: {
+        name: "Home",
+        href: "/"
       },
-      packages: {
-        name: "Packages",
-        href: "#packages"
+      TvShows: {
+        name: "Tv Shows",
+        href: "#"
       },
-      works: {
-        name: "Works",
-        href: "#works"
-      },
-      contactus: {
-        name: "Contact Us",
-        href: "#contact"
+      Series: {
+        name: "Series",
+        href: "#"
       }
     });
     return { navLinks };
