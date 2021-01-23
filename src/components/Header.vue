@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="hidden lg:block bg-gray-900">
+    <nav class="pp hidden lg:block bg-gray-900 bg-opacity-70 z-40">
       <ul class="flex space-x-8 items-center p-4">
         <li class="font-bold text-3xl text-red-600">VueFlix</li>
         <li v-for="link in navLinks" :key="link.name">
@@ -22,20 +22,21 @@ export default {
     const navLinks = ref({
       Home: {
         name: "Home",
-        href: "/"
+        href: "/",
       },
       TvShows: {
         name: "Tv Shows",
-        href: "#"
+        href: "#",
       },
       Series: {
         name: "Series",
-        href: "#"
-      }
+        href: "#",
+      },
     });
     return { navLinks };
-  }
+  },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

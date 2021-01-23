@@ -1,6 +1,11 @@
 <template>
-  <div>
+  <div class="relative">
     <Header />
+    <img
+      class="absolute inset-0 h-screen w-screen bg-center bg-no-repeat bg-cover"
+      src="https://wallpapercave.com/wp/wp6193606.jpg"
+      alt="demon slayer"
+    />
   </div>
   <router-view />
 </template>
@@ -29,5 +34,4 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-
 </style>
