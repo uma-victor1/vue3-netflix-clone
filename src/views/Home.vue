@@ -1,8 +1,14 @@
 <template>
   <div class="home absolute inset-0 -z-10">
     <div
-      style="background-image: url('https://wallpapercave.com/wp/wp6193606.jpg');"
-      class="text-left px-8 text-white h-screen relative"
+      style="
+        background-image: url('https://wallpapercave.com/wp/wp6193606.jpg');
+         background-position: center;
+          background-repeat: no-repeat;
+           background-size: cover;
+            background-attachment: fixed;
+      "
+      class="hero text-left px-8 text-white h-screen relative"
     >
       <div class="absolute mt-72">
         <h1 class="text-4xl mb-3 lg:mb-5 lg:text-7xl xl:text-9xl font-semibold">
@@ -31,7 +37,9 @@
         class="flex flex-col justify-center items-center max-w-sm mx-auto my-8"
       >
         <div
-          style="background-image: url(https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80;
+          "
           class="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
         ></div>
       </div>
