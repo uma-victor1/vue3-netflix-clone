@@ -3,10 +3,10 @@
     <div
       style="
         background-image: url('https://wallpapercave.com/wp/wp6193606.jpg');
-         background-position: center;
-          background-repeat: no-repeat;
-           background-size: cover;
-            background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
       "
       class="hero text-left px-8 text-white h-screen relative"
     >
@@ -38,10 +38,21 @@
 
 <script>
 import Movie from "@/components/Movie.vue";
+import MovieService from "../../Services/MovieService.js";
+// import { ref } from "vue";
 export default {
   name: "Home",
   components: {
-    Movie
-  }
+    Movie,
+  },
+  async setup() {
+    // const popularMovies = ref({}),
+    try {
+      const moviedata = await MovieService.getPopularMovies();
+      console.log(moviedata);
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
 </script>
