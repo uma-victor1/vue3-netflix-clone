@@ -6,7 +6,7 @@
   >
     <div
       :style="{
-        backgroundImage: `url(${baseImgUrl}/w500${movie.backdrop_path})`,
+        backgroundImage: `url(${baseImgUrl}/w500${movie.backdrop_path})`
       }"
       class="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
     ></div>
@@ -18,12 +18,12 @@ import { ref } from "vue";
 export default {
   props: {
     popularMovies: {
-      type: Array,
-    },
+      type: Array
+    }
   },
   setup() {
     const baseImgUrl = ref("https://image.tmdb.org/t/p");
     return { baseImgUrl };
-  },
+  }
 };
 </script>

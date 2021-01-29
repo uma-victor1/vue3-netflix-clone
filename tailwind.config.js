@@ -20,6 +20,9 @@ module.exports = {
       },
       zIndex: {
         "-10": "-10"
+      },
+      backgroundColor: {
+        grey: "#181818"
       }
     }
   },
