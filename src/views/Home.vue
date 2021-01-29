@@ -35,39 +35,31 @@
     <div class="w-full bg-grey">
       <h3 class="text-white text-2xl pt-6 ml-4 text-left">Most Popular</h3>
       <div class="flex space-x-4 overflow-y-hidden overflow-x-scroll">
-        <Movie :popularMovies="popularMovies" />
+        <PopularMovies :moviesData="moviesData" />
       </div>
-      <h3 class="text-white text-2xl pt-6 ml-4 text-left">Most Popular</h3>
+      <h3 class="text-white text-2xl pt-6 ml-4 text-left">Trending</h3>
       <div class="flex space-x-4 overflow-y-hidden overflow-x-scroll">
-        <Movie :popularMovies="popularMovies" />
+        <TrendingMovies :moviesData="moviesData" />
+      </div>
+      <h3 class="text-white text-2xl pt-6 ml-4 text-left">Top Rated</h3>
+      <div class="flex space-x-4 overflow-y-hidden overflow-x-scroll">
+        <TopRated :moviesData="moviesData" />
       </div>
     </div>
   </div>
 </template>
 s
 <script>
-import Movie from "@/components/Movie.vue";
-import MovieService from "../../Services/MovieService.js";
-import { ref } from "vue";
+import PopularMovies from "@/components/PopularMovies.vue";
+import TrendingMovies from "@/components/TrendingMovies.vue";
+import TopRated from "@/components/TopRated.vue";
+
 export default {
   name: "Home",
   components: {
-    Movie
-  },
-  setup() {
-    const popularMovies = ref([]);
-    // eslint-disable-next-line no-unused-vars
-    async function loadData() {
-      try {
-        const moviedata = await MovieService.getPopularMovies();
-        popularMovies.value = moviedata.data.results;
-        console.log(popularMovies.value);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    loadData();
-    return { popularMovies };
+    PopularMovies,
+    TrendingMovies,
+    TopRated
   }
 };
 </script>

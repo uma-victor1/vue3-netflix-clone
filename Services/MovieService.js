@@ -10,5 +10,11 @@ const serviceInstance = axios.create({
 export default {
   getPopularMovies() {
     return serviceInstance.get(`/movie/popular?api_key=${key.apiKey}`);
+  },
+  getTrendingMovies() {
+    return serviceInstance.get(`/trending/movie/week?api_key=${key.apiKey}`);
+  },
+  getTopMovies() {
+    return serviceInstance.get(`/movie/top_rated?api_key=${key.apiKey}`);
   }
 };
