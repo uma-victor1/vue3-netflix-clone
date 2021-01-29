@@ -32,27 +32,33 @@
       </div>
     </div>
     <!-- most popular -->
-    <Movie />
+    <Movie :popularMovies="popularMovies" />
   </div>
 </template>
 
 <script>
 import Movie from "@/components/Movie.vue";
 import MovieService from "../../Services/MovieService.js";
-// import { ref } from "vue";
+import { ref } from "vue";
 export default {
   name: "Home",
   components: {
-    Movie,
+    Movie
   },
-  async setup() {
-    // const popularMovies = ref({}),
-    try {
-      const moviedata = await MovieService.getPopularMovies();
-      console.log(moviedata);
-    } catch (err) {
-      console.log(err);
+  setup() {
+    const popularMovies = ref([]);
+    // eslint-disable-next-line no-unused-vars
+    async function loadData() {
+      try {
+        const moviedata = await MovieService.getPopularMovies();
+        popularMovies.value = moviedata.data.results;
+        console.log(popularMovies.value);
+      } catch (err) {
+        console.log(err);
+      }
     }
-  },
+    loadData();
+    return { popularMovies };
+  }
 };
 </script>

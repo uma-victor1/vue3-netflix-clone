@@ -14,5 +14,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    popularMovies: {
+      type: Array,
+      default:[] 
+    },
+  },
+};
 </script>
