@@ -32,12 +32,15 @@
       </div>
     </div>
     <!-- most popular -->
-    <div>
-    <Movie :popularMovies="popularMovies" />
+    <div class="w-full bg-gray-900">
+      <h3 class="text-white text-2xl pt-6 ml-4 text-left">Most Popular</h3>
+      <div class="flex space-x-4 overflow-y-hidden overflow-x-scroll">
+        <Movie :popularMovies="popularMovies" />
+      </div>
     </div>
   </div>
 </template>
-
+s
 <script>
 import Movie from "@/components/Movie.vue";
 import MovieService from "../../Services/MovieService.js";
