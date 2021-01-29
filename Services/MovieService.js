@@ -1,5 +1,5 @@
 import axios from "axios";
-import key from "../env.js";
+import key from "../env";
 
 const serviceInstance = axios.create({
   baseURL: "https://api.themoviedb.org/3",
