@@ -1,12 +1,12 @@
 <template>
   <div>
     <div
+      v-for="(movie, id) in popularMovies"
+      :key="id"
       class="flex flex-col justify-center items-center max-w-sm mx-auto my-8"
     >
       <div
-        style="
-            background-image: url(https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80;
-          "
+        :style="{ backgroundImage: `url(${baseImgUrl}/w500${movie.backdrop_path})` }"
         class="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
       ></div>
     </div>
@@ -14,12 +14,16 @@
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   props: {
     popularMovies: {
-      type: Array,
-      default:[] 
-    },
+      type: Array
+    }
   },
+  setup() {
+    const baseImgUrl = ref("https://image.tmdb.org/t/p");
+    return { baseImgUrl };
+  }
 };
 </script>

@@ -32,7 +32,9 @@
       </div>
     </div>
     <!-- most popular -->
+    <div>
     <Movie :popularMovies="popularMovies" />
+    </div>
   </div>
 </template>
 
