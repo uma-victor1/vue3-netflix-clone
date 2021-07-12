@@ -1,5 +1,7 @@
 <template>
-
+  
+          <Suspense>
+          <template #default>
           <div
     v-for="(movie, id) in moviesData"
     :key="id"
@@ -12,6 +14,14 @@
       class="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
     ></div>
   </div>  
+          </template>
+          <template #fallback>
+          <div>
+          <p>Wait for movie to load</p>
+          </div>
+          </template>
+        </Suspense>
+  
   
   
 </template>
