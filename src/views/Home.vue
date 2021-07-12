@@ -19,12 +19,37 @@
         </p>
         <div>
           <button
-            class="bg-white rounded-lg font-bold text-gray-800 text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-gray-300 mr-6"
+            class="
+              bg-white
+              rounded-lg
+              font-bold
+              text-gray-800 text-center
+              px-4
+              py-3
+              transition
+              duration-300
+              ease-in-out
+              hover:bg-gray-300
+              mr-6
+            "
           >
             Play
           </button>
           <button
-            class="bg-gray-400 rounded-lg font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-white hover:text-gray-800 mr-6"
+            class="
+              bg-gray-400
+              rounded-lg
+              font-bold
+              text-white text-center
+              px-4
+              py-3
+              transition
+              duration-300
+              ease-in-out
+              hover:bg-white
+              hover:text-gray-800
+              mr-6
+            "
           >
             More Info
           </button>
@@ -35,7 +60,7 @@
     <div class="w-full bg-grey">
       <h3 class="text-white text-2xl pt-6 ml-4 text-left">Most Popular</h3>
       <div class="flex space-x-4 overflow-y-hidden overflow-x-scroll">
-        <PopularMovies :moviesData="moviesData" />
+        <PopularMoviesAsync :moviesData="moviesData" />
       </div>
       <h3 class="text-white text-2xl pt-6 ml-4 text-left">Trending</h3>
       <div class="flex space-x-4 overflow-y-hidden overflow-x-scroll">
@@ -48,18 +73,28 @@
     </div>
   </div>
 </template>
-s
+
 <script>
-import PopularMovies from "@/components/PopularMovies.vue";
+import { defineAsyncComponent } from "vue";
+import Loading from "@/components/Loading.vue";
+const PopularMoviesAsync = defineAsyncComponent({ loader: () =>
+  import("../components/PopularMovies.vue"/* webpackChunkName: "Popular" */),
+  loadingComponent: Loading,
+  delay: 200,
+  suspensible: false
+});
+
 import TrendingMovies from "@/components/TrendingMovies.vue";
 import TopRated from "@/components/TopRated.vue";
 
 export default {
   name: "Home",
   components: {
-    PopularMovies,
+    PopularMoviesAsync,
     TrendingMovies,
-    TopRated
-  }
+    TopRated,
+  },
 };
 </script>
+
+
